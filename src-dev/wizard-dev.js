@@ -77,7 +77,7 @@
             if (this.index >= w._cards.length-1) {
                 this.log("on last card, changing next button to submit");
 
-                w.changeNextButton(w.args.buttons.submitText, "btn-green");
+                w.changeNextButton(w.args.buttons.submitText, "btn-success");
                 w._readyToSubmit = true;
                 w.trigger("readySubmit");
             }
@@ -89,7 +89,7 @@
                 else {
                     w.backButton.toggleClass("disabled", false);
                 }
-                w.changeNextButton(w.args.buttons.nextText, "btn-blue");
+                w.changeNextButton(w.args.buttons.nextText, "btn-primary");
             }
 
             return this;
@@ -104,7 +104,7 @@
             var a = $('<a class=""></a>');
             a.data("navindex", i);
             li.append(a);
-            a.append('<i class="icon-chevron-right pull-right">&nbsp;</i>');
+            a.append('<i class="glyphicon glyphicon-chevron-right pull-right">&nbsp;</i>');
             a.append(name);
             return li;
         },
@@ -257,7 +257,7 @@
              * run all the validators embedded on the inputs themselves
              */
             this.el.find("[data-validate]").each(function(i, el) {
-                self.log("validating individiual inputs");
+                self.log("validating individual inputs");
                 el = $(el);
 
                 var v = el.data("validate");
@@ -377,7 +377,7 @@
                         '<div class="wizard-modal-footer">',
                             '<div class="wizard-buttons-container">',
                                 '<button class="btn btn-default wizard-back" type="button">Back</button>',
-                                '<button class="btn btn-blue wizard-next" type="button">Next</button>',
+                                '<button class="btn btn-primary wizard-next" type="button">Next</button>',
                             '</div>',
                         '</div>',
                     '</div>',
@@ -549,7 +549,7 @@
         changeNextButton: function(text, cls) {
             this.log("changing next button, text: " + text, "class: " + cls);
             if (typeof(cls) != "undefined") {
-                this.nextButton.removeClass("btn-green btn-blue");
+                this.nextButton.removeClass("btn-success btn-primary");
             }
 
             if (cls) {
